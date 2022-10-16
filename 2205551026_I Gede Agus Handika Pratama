@@ -107,7 +107,7 @@ int kecepatan(){
  	printf("\n\tMasukkan Waktu (Jam) :");scanf("%f", &waktu);
   	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   	printf("\tNilai Kecepatan = %.2f KM/Jam", nilai_kecepatan(jarak, waktu));
-  	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	printf("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   	return 0;
 }
 
@@ -123,6 +123,6 @@ int debit(){
   	printf("\n\tMasukkan waktu (Jam) : ");scanf("%f", &waktu);
   	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   	printf("\tNilai Debit  = %.2f L/Jam", nilai_debit(volume,waktu));
-  	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	printf("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   	return 0;
 }
