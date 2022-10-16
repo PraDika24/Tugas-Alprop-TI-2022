@@ -1,6 +1,5 @@
 # Tugas-Alprop-TI-2022
 Nama : I Gede Agus Handika Pratama
-
 NIM  : 2205551026
 
 Pengujian Program :
