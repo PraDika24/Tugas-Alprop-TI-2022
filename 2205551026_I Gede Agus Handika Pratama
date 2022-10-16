@@ -1,0 +1,128 @@
+#include <stdio.h>
+
+#define PHI 3.14
+
+int luas_segitiga(int a, int t);
+int keliling_segitiga(int a, int t, int x);
+int segitiga();
+float volume_tabung(float r, float t);
+float luaspermukaan_tabung(float r, float t);
+int tabung();
+float nilai_kecepatan(float s, float  t);
+int kecepatan();
+float nilai_debit(float v, float t);
+int debit();
+
+
+int main(){
+    int menu;
+    printf("\n\t===================================");
+    printf("\n\t   PROGRAM PERHITUNGAN SEDERHANA   ");
+    printf("\n\t===================================");
+    printf("\n\t--------PILIHAN PROGRAM :----------");
+    printf("\n\t 1. Luas dan Keliling Segitiga");                           
+    printf("\n\t 2. Volume dan Luas Permukaan Tabung");  
+	printf("\n\t 3. Kecepatan");                    
+	printf("\n\t 4. Debit"); 
+	printf("\n\t 5. Keluar");
+	printf("\n\t===================================");
+    printf("\n\t INPUT KODE PILIHAN PROGRAM :");
+    scanf("%d", &menu);
+    
+     if(menu==1){
+        segitiga();
+    }else if(menu==2){
+        tabung();
+    }else if(menu==3){
+		kecepatan();
+    }else if(menu==4){
+        debit();
+    }else if(menu==5){
+       	printf("\t\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		printf("\t\t\tTERIMA KASIH SUDAH MENGGUNAKAN PROGRAM INI \n");
+		printf("\t\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"); 
+	}else {
+		printf("\t INPUT YANG ANDA MASUKAN SALAH!");
+	}
+}
+	
+
+    
+    int luas_segitiga(int a, int t){
+	int luas_segitiga;
+	luas_segitiga = (a*t)/2;
+	return luas_segitiga;
+}
+int keliling_segitiga(int a, int t, int x){
+	int keliling_segitiga;
+	keliling_segitiga = a + t + x;
+	return keliling_segitiga;
+}
+int segitiga (){
+	int alas, tinggi, s1, s2, s3;
+	printf("\t Menghitung Luas dan Keliling Segitiga\n\n");
+	printf("\n\t Masukan Nilai Alas   : ");scanf("%d", &alas);
+  	printf("\n\tMasukkan Nilai Tinggi : ");scanf("%d", &tinggi);
+  	printf("\n\tMasukkan Nilai Sisi 1 : ");scanf("%d", &s1);
+  	printf("\n\tMasukkan Nilai Sisi 2 : ");scanf("%d", &s2);
+  	printf("\n\tMasukkan Nilai Sisi 3 : ");scanf("%d", &s3);
+  	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	printf("\n\tLuas Segitiga  	  = %d", luas_segitiga(alas,tinggi));
+  	printf("\n\tKeliling Segitiga = %d", keliling_segitiga(s1,s2,s3));
+  	printf("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	return 0;
+}
+
+float volume_tabung(float r, float t){
+	float volume_tabung;
+	volume_tabung = (PHI*r*r*t);
+	return volume_tabung;
+}
+float luaspermukaan_tabung(float r, float t){
+	float luaspermukaan_tabung;
+	luaspermukaan_tabung = (2*PHI*r*r) + (2*PHI*r*t);
+	return luaspermukaan_tabung;
+}
+int tabung(){
+	float jari_jari, tinggi;
+	printf("\tMenghitung Volume dan Luas Permukaan Tabung \n\n");
+	printf("\n\tMasukan Nilai Jari-Jari : ");scanf("%f", &jari_jari);
+  	printf("\n\tMasukkan Nilai Tinggi   : ");scanf("%f", &tinggi);
+  	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	printf("\tVolume Tabung			  = %.2f", volume_tabung(jari_jari,tinggi));
+  	printf("\n\tLuas Permukaan Tabung = %.2f", luaspermukaan_tabung(jari_jari,tinggi));
+  	printf("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	return 0;
+}
+
+float nilai_kecepatan(float s, float t){
+	float nilai_kecepatan;
+	nilai_kecepatan = s/t;
+	return nilai_kecepatan;
+}
+int kecepatan(){
+	float jarak, waktu;
+	printf("\n        Menghitung Kecepatan \n"	   );
+	printf("\n\tMasukan Jarak (KM)   : ");scanf("%f", &jarak);
+ 	printf("\n\tMasukkan Waktu (Jam) :");scanf("%f", &waktu);
+  	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	printf("\tNilai Kecepatan = %.2f KM/Jam", nilai_kecepatan(jarak, waktu));
+  	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	return 0;
+}
+
+float nilai_debit(float v, float t){
+	float nilai_debit;
+	nilai_debit = v/t;
+	return nilai_debit;
+}
+int debit(){
+	float volume, waktu;
+	printf("\tMenghitung Debit \n");
+	printf("\n\tMasukan volume (L)   : ");scanf("%f", &volume);
+  	printf("\n\tMasukkan waktu (Jam) : ");scanf("%f", &waktu);
+  	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	printf("\tNilai Debit  = %.2f L/Jam", nilai_debit(volume,waktu));
+  	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  	return 0;
+}
